@@ -1,10 +1,10 @@
-DPDK Integration
+XDP Integration
 ============
 
 Environment
 --------------------
 We have tested on
- - DPDK 21.11
+ - xdp-tools-1.2.9
  - Linux kernel version 5.15.0
 
 Repository structure
@@ -12,15 +12,12 @@ Repository structure
 - `CM`: OctoSketch for the Count-Min Sketch
 - `Coco`: OctoSketch for the CocoSketch
 - `Count`: OctoSketch for the Count Sketch
-- `Elastic`: OctoSketch for the Elastic Sketch
-- `Locher`: OctoSketch for the Locher Sketch
-- `UnivMon`: OctoSketch for the UnivMon
-- `template`: Common functions used in OctoSketch of DPDK
+- `xdp_common`: Common functions used in OctoSketch of XDP
 
 How to run (example for the Count-Min Sketch)
 -------
 ```bash
 $ cd ./CM
-$ make
-$ sudo ./build/OctoSketch -l 0-12 -n 4
+$ sudo ./compile.sh
+$ sudo ./main
 ```

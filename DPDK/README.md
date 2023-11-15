@@ -1,5 +1,11 @@
-CPU Code
+DPDK Integration
 ============
+
+Environment
+--------------------
+We have tested on
+ - DPDK 21.11
+ - Linux kernel version 5.15.0-47-generic
 
 Repository structure
 --------------------
@@ -7,22 +13,14 @@ Repository structure
 - `Coco`: OctoSketch for the CocoSketch
 - `Count`: OctoSketch for the Count Sketch
 - `Elastic`: OctoSketch for the Elastic Sketch
-- `HLL`: OctoSketch for the HyperLogLog
-- `LL`: OctoSketch for the LogLog
 - `Locher`: OctoSketch for the Locher Sketch
 - `UnivMon`: OctoSketch for the UnivMon
-- `template`: Common functions used in OctoSketch of CPU
-
-Requirements
--------
-- cmake
-- g++
+- `template`: Common functions used in OctoSketch of DPDK
 
 How to run (example for the Count-Min Sketch)
 -------
 ```bash
 $ cd ./CM
-$ cmake .
 $ make
-$ ./CM your-dataset
+$ sudo ./build/OctoSketch -l 0-12 -n 4
 ```

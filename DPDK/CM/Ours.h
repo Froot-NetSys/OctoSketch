@@ -4,6 +4,10 @@
 #include "config.h"
 #include "../template/Ours.h"
 
+/**
+ * OctoSketch for the Count-Min sketch
+ */
+
 class CM_Ours : public Ours<uint64_t, CM_Entry<uint64_t>>{
 public:
 

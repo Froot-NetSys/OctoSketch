@@ -7,6 +7,10 @@
 
 #include <iostream>
 
+/**
+ * Use MMap to load binary dataset
+ */
+
 struct LoadResult{
     void* start;
     uint64_t length;

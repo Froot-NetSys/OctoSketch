@@ -3,6 +3,10 @@
 
 #include "DPDK.h"
 
+/**
+ * Template for OctoSketch running in multiple cores
+ */
+
 template<typename Key, typename Entry>
 class Ours{
 public:
@@ -20,6 +24,9 @@ public:
 
     virtual void insert_child(Sketch<Key>* sketch, myQueue& q, const Key& packet) = 0;
 
+    /**
+     * The thread of the aggregator
+     */
     void coordinator(unsigned queue_id){
         uint64_t start, end;
         uint64_t idx = 0;
@@ -51,6 +58,9 @@ public:
         delete sketch;
     }
 
+    /**
+     * The thread of each worker
+     */
     void local(unsigned queue_id){
         RTE_LOG(INFO, L2FWD, "%u core entering local sketch %u\n", rte_lcore_id(), queue_id);
 

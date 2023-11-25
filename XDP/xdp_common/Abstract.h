@@ -131,6 +131,7 @@ public:
         return 0;
     }
 
+    // TODO: You should change it based on your NIC
     const char nic[13] = "enp65s0f0np0";
 
     struct bpf_object *bpf_obj;

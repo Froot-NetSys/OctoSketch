@@ -4,6 +4,10 @@
 #include "config.h"
 #include "../template/Merge.h"
 
+/**
+ * Sketch-merge for the Count-Min sketch
+ */
+
 class CM_Merge : public Merge<uint64_t, MyCM*>{
 public:
 

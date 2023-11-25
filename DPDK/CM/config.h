@@ -3,6 +3,7 @@
 
 #include "../../sketch/CM.h"
 
+// Configuration for the sketch
 #define HASH_NUM 3
 #define LENGTH (1 << 16)
 #define HEAP_SIZE 0x3ff

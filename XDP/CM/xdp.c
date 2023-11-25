@@ -3,6 +3,10 @@
 
 #include "XDP_CM.h"
 
+/**
+ * The workers in the kernel
+ */
+
 #define HASH_NUM 3
 #define LENGTH 65536
 

@@ -9,13 +9,16 @@
 #include "Merge.h"
 #include "Ours.h"
 
-#define THREAD_NUM 16
+#define THREAD_NUM 16 // The number of workers
 
 template<typename Key>
 class Benchmark{
 public:
     typedef std::unordered_map<Key, int32_t> HashMap;
 
+    /**
+     * Load a binary file (dataset) and get the statistics
+     */
     Benchmark(const char* PATH){
 	    result = Load(PATH);
 

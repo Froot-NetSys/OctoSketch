@@ -4,6 +4,10 @@
 
 #include "../../sketch/CM.h"
 
+/**
+ * The aggregtor in the user space
+ */
+
 #define HASH_NUM 3
 #define LENGTH 65536
 #define HEAP_SIZE 0x3ff
@@ -19,6 +23,8 @@ static int32_t out_thd_fd, out_len_fd;
 
 static MyCM<uint64_t>* p;
 
+
+// Process entries in the queue and modify the threshold
 int handle_entry(void *ctx, void *data, size_t data_sz){
     CM_Entry<uint64_t> *e = (CM_Entry<uint64_t>*)data;
     p->Merge(*e);
@@ -76,6 +82,7 @@ public:
             return -1;
         }
 
+        // Polling entries in the queue
         int32_t err = 0;
         while(true){
             err = ring_buffer__consume(rb);

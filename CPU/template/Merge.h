@@ -3,6 +3,10 @@
 
 #include "Abstract.h"
 
+/**
+ * Template for sketch-merge running in multiple cores
+ */
+
 template<typename Key, typename Entry, uint32_t thread_num>
 class Merge: public Abstract{
 public:
@@ -24,6 +28,9 @@ public:
         parent.join();
     }
 
+    /**
+     * The thread of the aggregator
+     */
     void ParentThread(std::thread* thisThd, void* start, uint32_t size, HashMap* mp){
 #ifdef __linux__
         if(!setaffinity(thisThd, thread_num))
@@ -52,6 +59,9 @@ public:
         delete sketch;
     }
 
+    /**
+     * The thread of each worker
+     */
     void ChildThread(std::thread* thisThd, uint32_t thread_id, void* start, uint32_t size,
             std::atomic<int32_t>* finish)
             {

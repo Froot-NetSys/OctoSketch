@@ -44,9 +44,7 @@ public:
                 HH += 1;
             }
         }
-
-        //std::cout << estHH << " " << HH << " " << threshold <<  std::endl;
-
+        
         std::cout << "CR: " << both / HH << std::endl
                 << "PR: " << both / estHH << std::endl
                 << "AAE: " << AAE / both << std::endl

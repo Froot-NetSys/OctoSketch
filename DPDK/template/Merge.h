@@ -3,6 +3,10 @@
 
 #include "DPDK.h"
 
+/**
+ * Template for sketch-merge running in multiple cores
+ */
+
 template<typename Key, typename Entry>
 class Merge{
 public:
@@ -18,6 +22,9 @@ public:
 
     virtual Sketch<Key>* insert_child(Sketch<Key>* sketch, myQueue& q, const Key& packet, uint64_t number, uint32_t thread_id) = 0;
 
+    /**
+     * The thread of the aggregator
+     */
     void coordinator(unsigned queue_id){
         uint64_t start, end;
         RTE_LOG(INFO, L2FWD, "entering coordinator %u\n", queue_id);
@@ -37,6 +44,9 @@ public:
         delete sketch;
     }
 
+    /**
+     * The thread of each worker
+     */
     void local(unsigned queue_id){
         RTE_LOG(INFO, L2FWD, "entering local sketch %u\n", queue_id);
 

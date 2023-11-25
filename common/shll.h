@@ -5,6 +5,10 @@
 #include "hash.h"
 #include <math.h>
 
+/**
+ * Bucket used in HyperLogLog-related data structures
+ */
+
 struct Buckets{
     uint8_t counter0 : 4;
     uint8_t counter1 : 4;

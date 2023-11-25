@@ -3,6 +3,7 @@
 
 #include "CM.h"
 
+// Configuration for the sketch
 #define HASH_NUM 3
 #define LENGTH (1 << 16)
 #define HEAP_SIZE 0x3ff
@@ -17,7 +18,7 @@ using MyChild_CM = Child_CM<Key, HASH_NUM, LENGTH>;
 
 #define THP_TIME 20
 
-#define ALPHA 0.0002
+#define ALPHA 0.0002 // Threshold for finding heavy hitters
 
 #define PROMASK 0x7f
 

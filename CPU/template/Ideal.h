@@ -3,6 +3,10 @@
 
 #include "Abstract.h"
 
+/**
+ * Template for sketches running in a single core
+ */
+
 template<typename Key>
 class Ideal : public Abstract{
 public:

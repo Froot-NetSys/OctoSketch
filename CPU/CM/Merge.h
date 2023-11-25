@@ -4,6 +4,10 @@
 #include "config.h"
 #include "template/Merge.h"
 
+/**
+ * Sketch-merge for the Count-Min sketch
+ */
+
 template<typename Key, uint32_t thread_num>
 class CM_Merge : public Merge<Key, MyCM<Key>*, thread_num>{
 public:

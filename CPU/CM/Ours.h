@@ -4,6 +4,10 @@
 #include "config.h"
 #include "template/Ours.h"
 
+/**
+ * OctoSketch for the Count-Min sketch
+ */
+
 template<typename Key, uint32_t thread_num>
 class CM_Ours : public Ours<Key, CM_Entry<Key>, thread_num>{
 public:
